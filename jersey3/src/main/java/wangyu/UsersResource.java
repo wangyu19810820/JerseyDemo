@@ -18,6 +18,7 @@ import java.util.Map;
  * @Consumes定义消费MIME类型，方法上的注解会覆盖类上的注解。只有该请求有合适的MIME类型（Accept或者Content-Type），才会被响应。
  * @QueryParam定义查询参数，@DefaultValue可以指定该参数的默认值，查询参数除了是基本类型外，也可以是自定义类型
  * @FormParam定义表单参数
+ * @MatrixParam定义property=value型的url，比如/myapp/users/123;addr=aaa，其中addr就能被@MatrixParam捕获
  * @Context注解和UriInfo类型定义参数组合Map，getQueryParameters()获取查询参数，getPathParameters()获取路径参数
  * 而表单参数组合Map，只需将参数定义为MultivaluedMap类型，无需其他注解
  * @Context注解和HttpHeaders类型定义Http表头和cookie组合的Map
@@ -65,8 +66,8 @@ public class UsersResource {
     }
 
     @DELETE
-    public String deleteUser(@PathParam("name")String name) {
-        return "delete:id:0,name:" + name + ".";
+    public String deleteUser(@PathParam("name")String name, @MatrixParam("addr") String addr) {
+        return "delete:id:0,name:" + name + ",addr:" + addr;
     }
 
     @POST

@@ -10,7 +10,7 @@ public class MyBeanParam {
     @QueryParam("sex")
     private String sex;
 
-    @MatrixParam("m")
+    @MatrixParam("addr")
     @Encoded
     @DefaultValue("default")
     private String matrixParam;
