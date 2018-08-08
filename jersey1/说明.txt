@@ -1,0 +1,16 @@
+Grizzly容器中运行接口
+
+运用maven骨架
+mvn archetype:generate -DarchetypeArtifactId=jersey-quickstart-grizzly2 \
+-DarchetypeGroupId=org.glassfish.jersey.archetypes -DinteractiveMode=false \
+-DgroupId=com.example -DartifactId=simple-service -Dpackage=com.example \
+-DarchetypeVersion=2.16
+
+在Main类的main方法启动Grizzly
+可在浏览器中访问http://localhost:8080/myapp/myresource访问接口
+
+如果用maven运行项目
+$ mvn clean
+$ mvn test
+$ mvn exec:java
+这样自动调用Main类的main方法启动Grizzly

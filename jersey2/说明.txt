@@ -1,0 +1,14 @@
+基于 Servlet 的服务端应用
+
+应用骨架
+mvn archetype:generate -DarchetypeArtifactId=jersey-quickstart-webapp \
+-DarchetypeGroupId=org.glassfish.jersey.archetypes -DinteractiveMode=f
+alse \
+-DgroupId=com.example -DartifactId=simple-service-webapp -Dpackage=com
+.example \
+-DarchetypeVersion=2.16
+
+或者
+导入maven依赖，设置web.xml
+
+通过浏览器访问url来访问接口
